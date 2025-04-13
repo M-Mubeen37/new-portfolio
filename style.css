@@ -2049,6 +2049,9 @@ color: white;
 35px 20px !important;
   width: 155px !important;
             }
+            .hero-image{
+                margin-top: 50px;
+            }
 
             .testimonial-right .flickity-viewport{
                 height: 250px !important;
