@@ -531,7 +531,7 @@ header.scrolled {
     transform: scale(1.1);
 }
 .portfolio-item img{
-    height: 63%;
+    height: 57%;
     width: 100%;
 }
 .portfolio-overlay-content {
@@ -2139,4 +2139,379 @@ color: white;
    }
    .mobile-toggle.active {
     display: none;
+   }
+   :root {
+       --primary: #4a61dd;
+       --secondary2: #25b0bc;
+       --tertiary: #ff7171;
+       --dark: #333;
+       --light: #fafafa;
+       --gradient: linear-gradient(135deg, var(--primary), var(--secondary2));
+   }
+
+   .ob-blog-section {
+       padding: 60px 0;
+   }
+
+   .ob-container {
+       max-width: 1200px;
+       margin: 0 auto;
+       padding: 0 20px;
+   }
+
+   .ob-section-title {
+       text-align: center;
+       margin-bottom: 60px;
+   }
+
+   .ob-section-title h2 {
+       font-size: 42px;
+       margin-bottom: 15px;
+       position: relative;
+       display: inline-block;
+   }
+
+   .ob-section-title h2::after {
+       content: '';
+       position: absolute;
+       width: 60px;
+       height: 4px;
+       background: var(--gradient);
+       left: 50%;
+       bottom: -10px;
+       transform: translateX(-50%);
+       border-radius: 2px;
+   }
+
+   .ob-section-title p {
+       font-size: 18px;
+       color: var(--dark);
+       max-width: 700px;
+       margin: 20px auto 0;
+   }
+
+   .ob-blog-grid {
+       display: grid;
+       grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+       gap: 30px;
+   }
+
+   .ob-blog-card {
+       background-color: white;
+       border-radius: 10px;
+       overflow: hidden;
+       box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+       transition: transform 0.3s ease, box-shadow 0.3s ease;
+       position: relative;
+   }
+
+   .ob-blog-card:hover {
+       transform: translateY(-10px);
+       box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+   }
+
+   .ob-blog-image {
+       height: 220px;
+       overflow: hidden;
+       position: relative;
+   }
+
+   .ob-blog-image img {
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+       transition: transform 0.5s ease;
+   }
+
+   .ob-blog-card:hover .ob-blog-image img {
+       transform: scale(1.05);
+   }
+
+   .ob-blog-category {
+       position: absolute;
+       top: 15px;
+       left: 15px;
+       background: var(--gradient);
+       color: white;
+       padding: 6px 12px;
+       border-radius: 20px;
+       font-size: 12px;
+       font-weight: 600;
+       text-transform: uppercase;
+       z-index: 2;
+   }
+
+   .ob-blog-content {
+       padding: 25px;
+   }
+
+   .ob-blog-date {
+       font-size: 14px;
+       color: var(--tertiary);
+       margin-bottom: 10px;
+       display: block;
+       font-weight: 600;
+   }
+
+   .ob-blog-title {
+       font-size: 22px;
+       margin-bottom: 15px;
+       font-weight: 700;
+       color: var(--dark);
+       line-height: 1.3;
+   }
+
+   .ob-blog-excerpt {
+       font-size: 16px;
+       line-height: 1.6;
+       color: #666;
+       margin-bottom: 20px;
+       display: -webkit-box;
+       -webkit-line-clamp: 3;
+       -webkit-box-orient: vertical;
+       overflow: hidden;
+   }
+
+   .ob-blog-link {
+       color: var(--primary);
+       font-weight: 600;
+       display: inline-flex;
+       align-items: center;
+       transition: color 0.3s ease;
+       cursor: pointer;
+   }
+
+   .ob-blog-link:hover {
+       color: var(--secondary2);
+   }
+
+   .ob-blog-link svg {
+       margin-left: 8px;
+       transition: transform 0.3s ease;
+   }
+
+   .ob-blog-link:hover svg {
+       transform: translateX(5px);
+   }
+
+   .ob-blog-modal {
+       position: fixed;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       background-color: rgba(0,0,0,0.8);
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       z-index: 9999;
+       opacity: 0;
+       visibility: hidden;
+       transition: opacity 0.3s ease, visibility 0.3s ease;
+   }
+
+   .ob-blog-modal.active {
+       opacity: 1;
+       visibility: visible;
+   }
+
+   .ob-modal-content {
+       background-color: white;
+       width: 90%;
+       max-width: 900px;
+       max-height: 90vh;
+       overflow-y: auto;
+       border-radius: 10px;
+       position: relative;
+       transform: translateY(30px);
+       opacity: 0;
+       transition: transform 0.5s ease, opacity 0.5s ease;
+   }
+
+   .ob-blog-modal.active .ob-modal-content {
+       transform: translateY(0);
+       opacity: 1;
+   }
+
+   .ob-modal-close {
+       position: absolute;
+       top: 20px;
+       right: 20px;
+       width: 40px;
+       height: 40px;
+       background-color: var(--primary);
+       border-radius: 50%;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       cursor: pointer;
+       z-index: 10;
+       transition: background-color 0.3s ease;
+   }
+
+   .ob-modal-close:hover {
+       background-color: var(--tertiary);
+   }
+
+   .ob-modal-close svg {
+       width: 20px;
+       height: 20px;
+       fill: white;
+   }
+
+   .ob-modal-header {
+       position: relative;
+       height: 300px;
+       overflow: hidden;
+   }
+
+   .ob-modal-header img {
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+   }
+
+   .ob-modal-header-content {
+       position: absolute;
+       bottom: 0;
+       left: 0;
+       right: 0;
+       padding: 30px;
+       background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+       color: white;
+   }
+
+   .ob-modal-category {
+       display: inline-block;
+       background: var(--gradient);
+       padding: 6px 12px;
+       border-radius: 20px;
+       font-size: 12px;
+       font-weight: 600;
+       text-transform: uppercase;
+       margin-bottom: 15px;
+   }
+
+   .ob-modal-title {
+       font-size: 32px;
+       margin-bottom: 10px;
+       font-weight: 700;
+   }
+
+   .ob-modal-meta {
+       display: flex;
+       align-items: center;
+       font-size: 14px;
+   }
+
+   .ob-modal-meta span {
+       margin-right: 20px;
+       display: flex;
+       align-items: center;
+   }
+
+   .ob-modal-meta svg {
+       margin-right: 6px;
+       width: 16px;
+       height: 16px;
+   }
+
+   .ob-modal-body {
+       padding: 40px;
+   }
+
+   .ob-modal-body p {
+       font-size: 17px;
+       line-height: 1.8;
+       color: #444;
+       margin-bottom: 25px;
+   }
+
+   .ob-modal-body h3 {
+       font-size: 24px;
+       margin: 35px 0 20px;
+       color: var(--dark);
+   }
+
+   .ob-modal-body img {
+       width: 100%;
+       border-radius: 10px;
+       margin: 30px 0;
+   }
+
+   .ob-modal-body blockquote {
+       border-left: 4px solid var(--primary);
+       padding: 20px 30px;
+       background-color: rgba(74, 97, 221, 0.05);
+       margin: 30px 0;
+       font-style: italic;
+       color: #555;
+   }
+
+   .ob-modal-tags {
+       margin-top: 40px;
+       padding-top: 30px;
+       border-top: 1px solid #eee;
+   }
+
+   .ob-modal-tags span {
+       font-weight: 600;
+       margin-right: 10px;
+       color: var(--dark);
+   }
+
+   .ob-tag {
+       display: inline-block;
+       padding: 5px 12px;
+       background-color: #f0f0f0;
+       border-radius: 20px;
+       margin-right: 8px;
+       margin-bottom: 8px;
+       font-size: 14px;
+       transition: background-color 0.3s ease, color 0.3s ease;
+   }
+
+   .ob-tag:hover {
+       background-color: var(--primary);
+       color: white;
+   }
+
+   .ob-view-all {
+       text-align: center;
+       margin-top: 50px;
+   }
+
+   .ob-view-all-btn {
+       display: inline-block;
+       padding: 14px 30px;
+       background: var(--gradient);
+       color: white;
+       border-radius: 30px;
+       font-weight: 600;
+       text-decoration: none;
+       transition: transform 0.3s ease, box-shadow 0.3s ease;
+       box-shadow: 0 5px 15px rgba(74, 97, 221, 0.3);
+   }
+
+   .ob-view-all-btn:hover {
+       transform: translateY(-3px);
+       box-shadow: 0 8px 25px rgba(74, 97, 221, 0.4);
+   }
+
+   @media screen and (max-width: 768px) {
+       .ob-blog-grid {
+           grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+       }
+       
+       .ob-modal-title {
+           font-size: 24px;
+       }
+       
+       .ob-modal-header {
+           height: 200px;
+       }
+       
+       .ob-modal-body {
+           padding: 25px;
+       }
    }
