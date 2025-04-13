@@ -1291,15 +1291,20 @@ This project involved converting an intricate Figma design with 16 fully custom 
 
         mobileToggle.addEventListener('click', () => {
             navLinks.classList.add('active');
+            mobileToggle.classList.add('active')
         });
 
         closeMenu.addEventListener('click', () => {
             navLinks.classList.remove('active');
+            mobileToggle.classList.remove('active');
         });
 
         links.forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
+            mobileToggle.classList.remove('active');
+
+
             });
         });
 
